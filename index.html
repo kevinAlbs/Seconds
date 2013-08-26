@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Seconds</title>
+  <meta name="description" content="Ludum Dare 27 game submission">
+  <meta name="author" content="Kevin Albertson">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+	<div class="screen" id="screen_intro">
+		<h1>Seconds</h1>
+		<h2>You are a chef</h2>
+		<h2>10 customers want seconds on their meals</h2>
+		<h2>Do you have what it takes?</h2>
+		<button>Continue >></button>
+		<h4>You must focus your thoughts</h4>
+	</div>
+	<div class="screen" id="screen_end">
+		<h1>Final Results</h1>
+		<p>Your total score was: <span id="score"></span> out of a possible 1000 points</p>
+		<h2>Credits:</h2>
+		<p>Kevin Albertson - Development, Art</p>
+		<p>Kaitlin Kohut - Story, Idea</p>
+	</div>
+	<div class="screen" id="screen_gameplay">
+		<div id="left">
+			<div id="neuronTip">
+				You are this neuron.
+			</div>
+			<div id="receptorTip">
+				Reach this receptor to think, avoid red ones.
+			</div>
+			<div id="overlay">
+				<p id="stat"></p>
+				<p id="msg">Press space to start round</p>
+			</div>
+			<canvas id="brain" width="435" height="407"></canvas>
+			<p><span id="name">Your</span> brain</p>
+			<div id="timer"></div>
+		</div>
+		<div id="right">
+			<h1></h1>
+			<h2></h2>
+			<div id="img_container">
+				<img src=""/>
+			</div>
+			<p id="status"></p>
+			<p id="quality">Overall food quality: <span></span>%</p>
+			<button id="next">Next Second >></button>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div id="container">
+	</div>
+	<footer>
+		<p>
+			<a href="">View on GitHub</a>
+		</p>
+		<p>
+			<a href="http://www.youtube.com/watch?v=TbJmpKcNrLQ" target="_blank">Suggested Music</a>
+		</p>
+	</footer>
+	<script src="main.js"></script>
+	<script src="data.js"></script>
+	<script src="screen.js"></script>
+	<script src="screen_intro.js"></script>
+	<script src="screen_end.js"></script>
+	<script src="screen_gameplay.js"></script>
+	<script src="neuron.js"></script>
+	<script src="receptor.js"></script>
+	<script src="wall.js"></script>
+	<script>
+		GAME.setScreen(new screen_intro());
+	</script>
+</body>
+</html>

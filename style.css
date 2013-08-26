@@ -1,0 +1,115 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", "Helvetica", "Arial", "sans-serif";
+	font-weight: normal;
+}
+body{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+#container, footer{
+	width: 768px;
+	height: 468px;
+	padding: 16px;
+	margin: 100px auto 0px auto;
+	border: 1px black solid;
+}
+footer{
+	border: none;
+	height: auto;
+	margin: 0 auto;
+	padding: 0px;
+	margin-top: 10px;
+}
+.screen{
+	display: none;
+}
+
+#screen_intro{
+	height: 466px;
+	background: #000;
+	color: #FFF;
+	text-align: center;
+}
+#screen_intro h1{
+	color: #0F0;
+}
+#screen_intro button{
+	background: #0F0;
+	border: none;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#screen_gameplay{
+	position: relative;
+}
+#screen_gameplay #brain{
+	border: 1px #f39d9d solid;
+}
+#screen_gameplay #left{
+	width: 437px;
+	float: left;
+}
+#screen_gameplay #overlay{
+	position: absolute;
+	z-index: 1;
+	top: 290px;
+	background: #FFF;
+	width: 415px;
+	color: #000;
+	border: 1px black solid;
+	padding: 20px 10px;
+	display: none;
+}
+#screen_gameplay #right{
+	float: right;
+	width: 310px;
+}
+#screen_gameplay #img_container{
+	height: 200px;
+	border: 1px black solid;
+	background: #f9f9f9;
+	text-align: center;
+}
+#screen_gameplay #img_container img{
+	display: none;
+}
+.clear{clear:both;}
+
+#quality{
+	display: none;
+	margin-top: 50px;
+}
+#next{
+	padding: 5px 10px;
+	background: #0F0; 
+	border: none;
+	margin-top: 10px;
+	margin-left: 193px;
+	display: none;
+}
+#next:hover{
+	position: relative;
+	top: -2px;
+	left: -2px;
+	padding: 7px 12px;
+}
+
+#neuronTip, #receptorTip{
+	position: absolute;
+	width: 200px;
+	background: rgba(255,255,255,.5);
+	border-radius: 5px;
+	border: 1px black solid;
+	font-size: 10pt;
+	padding: 3px;
+	display: none;
+}

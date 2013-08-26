@@ -1,0 +1,98 @@
+/* old
+		var pVel = this.getVel();
+		for(var i = 0; i < ws.length; i++){
+			var wPos = ws[i].getPos();
+			var wW = ws[i].getW();
+			var wH = ws[i].getH();
+			var np = { //next point
+				x: pPos.x + pVel.x,
+				y: pPos.y + pVel.y
+			};
+			
+			var collisions = [];
+			if((pPos.x - np.x) != 0){
+				var m = (pPos.y - np.y)/(pPos.x - np.x);
+				//check all four sides of rectangle
+				var xCol = wPos.x;
+				if(pPos.x <= xCol && np.x >= xCol){
+					//check if there is a y in there
+					var yCol = pPos.y + m * (xCol - pPos.x);
+					if(yCol >= wPos.y && yCol <= wPos.y + wH){
+						//collision on left side
+						collisions.push({
+							x: xCol,
+							y: yCol,
+							dist: GAME.utils.dist(pPos.x, pPos.y, xCol, yCol)
+						});
+						console.log(collisions);
+					}
+				}
+				xCol = wPos.x + wW;
+				if(pPos.x >= xCol && np.x <= xCol){
+					//check if there is a y in there
+					var yCol = pPos.y + m * (xCol - pPos.x);
+					if(yCol >= wPos.y && yCol <= wPos.y + wH){
+						//collision on right side
+						collisions.push({
+							x: xCol,
+							y: yCol,
+							dist: GAME.utils.dist(pPos.x, pPos.y, xCol, yCol)
+						});
+						console.log(collisions);
+					}
+				}
+			}
+			if((pPos.y - np.y) != 0){
+				var mi = (pPos.x - np.x)/(pPos.y - np.y);
+				yCol = wPos.y;
+				if(pPos.y <= yCol && np.y >= yCol){
+					//check if there is a x in there
+					var xCol = pPos.x + mi * (yCol - pPos.y);
+					if(xCol >= wPos.x && xCol <= wPos.x + wW){
+						//collision on top side
+						collisions.push({
+							x: xCol,
+							y: yCol,
+							dist: GAME.utils.dist(pPos.x, pPos.y, xCol, yCol)
+						});
+						console.log(collisions);
+					}
+				}
+				yCol = wPos.y + wH;
+				if(pPos.y >= yCol && np.y <= yCol){
+					//check if there is a x in there
+					var xCol = pPos.x + mi * (yCol - pPos.y);
+					if(xCol >= wPos.x && xCol <= wPos.x + wW){
+						//collision on top side
+						collisions.push({
+							x: xCol,
+							y: yCol,
+							dist: GAME.utils.dist(pPos.x, pPos.y, xCol, yCol)
+						});
+						console.log(collisions);
+					}
+				}
+			}
+			//get the shortest collision
+			var shortest = {
+				dist: 1000000
+			};
+			if(collisions.length > 0){
+				for(var i = 0; i < collisions.length; i++){
+					if(collisions[i].dist < shortest.dist){
+						shortest = collisions[i];
+					}
+				}
+				//have to set pos.x based on collision point
+				console.log(shortest);
+				pos.x = shortest.x - (h/2 * Math.sin(a));
+				pos.y = shortest.y + (h/2 * Math.cos(a));
+				vel.x = 0;
+				vel.y = 0;
+			}
+			else{
+				pos.x += vel.x;
+				pos.y += vel.y;
+			}
+		}
+*/
